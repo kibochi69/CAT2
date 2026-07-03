@@ -245,6 +245,79 @@ p {
   gap: 1rem;
 }
 
+.goal-controls {
+  max-width: 42rem;
+}
+
+.goal-controls label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  color: var(--red-soft);
+  background-color: var(--panel);
+  border: 0.08rem solid var(--line);
+  border-radius: 0.45rem;
+  font: inherit;
+}
+
+input:focus {
+  outline: 0.12rem solid var(--red);
+  outline-offset: 0.12rem;
+}
+
+button {
+  padding: 0.8rem 1rem;
+  color: var(--black);
+  background-color: var(--red);
+  border: 0.08rem solid var(--red);
+  border-radius: 0.45rem;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  color: var(--red);
+  background-color: transparent;
+}
+
+.goal-list {
+  max-width: 42rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.goal-item {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--red-soft);
+  background-color: var(--panel);
+  border: 0.08rem solid var(--line);
+  border-radius: 0.45rem;
+}
+
+.remove-goal {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.7rem;
+}
+
 address {
   font-style: normal;
 }
@@ -276,5 +349,9 @@ address a {
 
   .staff-grid {
     grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
   }
 }
