@@ -318,6 +318,38 @@ button:hover {
   padding: 0.45rem 0.7rem;
 }
 
+.enquiry-section {
+  background-color: var(--panel);
+}
+
+#enquiry-form {
+  max-width: 42rem;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.form-feedback {
+  min-height: 1.6rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.form-feedback.error {
+  color: #ff7777;
+}
+
+.form-feedback.success {
+  color: #70e88c;
+}
+
 address {
   font-style: normal;
 }

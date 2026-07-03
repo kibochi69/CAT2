@@ -63,3 +63,34 @@ function addGoal() {
 }
 
 addGoalButton.addEventListener("click", addGoal);
+
+const enquiryForm = document.querySelector("#enquiry-form");
+const playerNameInput = document.querySelector("#player-name");
+const playerEmailInput = document.querySelector("#player-email");
+const formFeedback = document.querySelector("#form-feedback");
+
+enquiryForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const playerName = playerNameInput.value.trim();
+  const playerEmail = playerEmailInput.value.trim();
+  const emailLooksValid = playerEmail.includes("@") && playerEmail.includes(".");
+
+  formFeedback.classList.remove("error", "success");
+
+  if (playerName.length < 2) {
+    formFeedback.textContent = "Please enter a player name with at least two characters.";
+    formFeedback.classList.add("error");
+    return;
+  }
+
+  if (!emailLooksValid) {
+    formFeedback.textContent = "Please enter a valid email address.";
+    formFeedback.classList.add("error");
+    return;
+  }
+
+  formFeedback.textContent = `Thank you, ${playerName}. Your enquiry has been received.`;
+  formFeedback.classList.add("success");
+  enquiryForm.reset();
+});

@@ -100,6 +100,23 @@
       </div>
       <ul id="goal-list" class="goal-list"></ul>
     </section>
+
+    <section class="page-section enquiry-section" aria-labelledby="enquiry-title">
+      <h2 id="enquiry-title">Player Enquiry</h2>
+      <p>Send your details if you would like to join a training session.</p>
+      <form id="enquiry-form" novalidate>
+        <div class="form-field">
+          <label for="player-name">Player name</label>
+          <input id="player-name" name="playerName" type="text" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="player-email">Email address</label>
+          <input id="player-email" name="playerEmail" type="email" autocomplete="email">
+        </div>
+        <button type="submit">Send Enquiry</button>
+        <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <footer id="contact" class="site-footer">
