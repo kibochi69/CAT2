@@ -1,0 +1,13 @@
+Foundation Football Midterm Client Conversation
+
+Client request:
+Create a simple responsive Foundation Football webpage using only HTML and CSS.
+Use semantic HTML, proper heading hierarchy, internal navigation, meaningful image
+alternative text, and readable content. Use an external stylesheet with Flexbox,
+CSS Grid, media queries, relative units, typography, spacing, borders, rounded
+corners, a black background, red writing, and hover transitions.
+
+Follow-up decisions:
+- Use the supplied football field photograph as the banner image.
+- Use a logo made from an F and a horizontally inverted F.
+- Combine the first main section and banner image into one hero section.
