@@ -1,0 +1,24 @@
+Foundation Football CAT 2 Implementation Notes
+
+1. Loop-rendered content
+The staff cards are stored in the programs array in js/script.js. A forEach loop
+creates each article, heading, and paragraph and appends the cards to #program-list.
+
+2. Dynamic add and remove
+The training-goals section reads the input value, creates a list item and remove
+button with createElement(), and adds it with appendChild(). The remove button
+deletes its own list item with remove().
+
+3. Form validation
+The player-enquiry form prevents its normal submission, reads the name and email
+with .value, checks both values, and displays success or error feedback using
+textContent and CSS classes.
+
+4. Persistent state
+Training goals are stored as JSON in localStorage. Saved goals are read and
+rendered when the page loads, and storage is updated after every add or removal.
+
+5. Banner click-to-reveal
+Clicking the banner image uses classList.toggle() to add or remove the
+caption-visible class. CSS uses that class to reveal the banner caption. Enter
+and Space provide the same behavior for keyboard users.
