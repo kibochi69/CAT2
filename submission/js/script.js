@@ -32,14 +32,10 @@ programs.forEach((program) => {
 const goalInput = document.querySelector("#goal-input");
 const addGoalButton = document.querySelector("#add-goal-button");
 const goalList = document.querySelector("#goal-list");
+const goalsStorageKey = "foundationFootballGoals";
+const savedGoals = JSON.parse(localStorage.getItem(goalsStorageKey)) || [];
 
-function addGoal() {
-  const goalName = goalInput.value.trim();
-
-  if (goalName === "") {
-    return;
-  }
-
+function createGoalItem(goalName) {
   const listItem = document.createElement("li");
   const goalText = document.createElement("span");
   const removeButton = document.createElement("button");
@@ -52,15 +48,39 @@ function addGoal() {
 
   removeButton.addEventListener("click", () => {
     listItem.remove();
+    saveGoals();
   });
 
   listItem.appendChild(goalText);
   listItem.appendChild(removeButton);
   goalList.appendChild(listItem);
+}
+
+function saveGoals() {
+  const goalNames = Array.from(goalList.querySelectorAll(".goal-item span")).map(
+    (goal) => goal.textContent
+  );
+
+  localStorage.setItem(goalsStorageKey, JSON.stringify(goalNames));
+}
+
+function addGoal() {
+  const goalName = goalInput.value.trim();
+
+  if (goalName === "") {
+    return;
+  }
+
+  createGoalItem(goalName);
+  saveGoals();
 
   goalInput.value = "";
   goalInput.focus();
 }
+
+savedGoals.forEach((goalName) => {
+  createGoalItem(goalName);
+});
 
 addGoalButton.addEventListener("click", addGoal);
 
