@@ -1,13 +1,16 @@
 const programs = [
   {
+    id: 1,
     name: "Management",
     description: "Organizes the team and helps visitors with questions."
   },
   {
+    id: 2,
     name: "Coaches",
     description: "Guide players during training and match preparation."
   },
   {
+    id: 3,
     name: "Members",
     description: "Support the football community and represent the club."
   }
