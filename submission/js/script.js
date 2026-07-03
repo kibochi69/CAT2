@@ -114,3 +114,20 @@ enquiryForm.addEventListener("submit", (event) => {
   formFeedback.classList.add("success");
   enquiryForm.reset();
 });
+
+const hero = document.querySelector(".hero");
+const bannerImage = document.querySelector("#banner-image");
+
+function toggleBannerCaption() {
+  const captionIsVisible = hero.classList.toggle("caption-visible");
+  bannerImage.setAttribute("aria-expanded", captionIsVisible);
+}
+
+bannerImage.addEventListener("click", toggleBannerCaption);
+
+bannerImage.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    toggleBannerCaption();
+  }
+});

@@ -128,6 +128,7 @@ a:hover {
   content: "";
   background: linear-gradient(90deg, rgba(3, 3, 3, 0.9), rgba(3, 3, 3, 0.48));
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-bg {
@@ -136,6 +137,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .hero-text {
@@ -143,6 +145,29 @@ a:hover {
   z-index: 2;
   flex: 1 1 28rem;
   max-width: 42rem;
+}
+
+.banner-caption {
+  position: absolute;
+  right: max(4%, calc((100% - 72rem) / 2));
+  bottom: 2rem;
+  z-index: 2;
+  max-width: 24rem;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  color: var(--red-soft);
+  background-color: rgba(3, 3, 3, 0.9);
+  border: 0.08rem solid var(--red);
+  border-radius: 0.45rem;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.hero.caption-visible .banner-caption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .intro-text {
@@ -377,6 +402,12 @@ address a {
   .hero {
     min-height: auto;
     padding: 5rem 4%;
+  }
+
+  .banner-caption {
+    right: 4%;
+    bottom: 1rem;
+    max-width: 92%;
   }
 
   .staff-grid {
